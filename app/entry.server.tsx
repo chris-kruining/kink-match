@@ -1,7 +1,7 @@
 import type { EntryContext } from '@remix-run/cloudflare';
 import { RemixServer } from '@remix-run/react';
 import { renderToString } from 'react-dom/server';
-import { getCssText } from '~/stiches.config.js';
+import { getCssText } from './stiches.config.js';
 
 export default function handleRequest(
     request: Request,

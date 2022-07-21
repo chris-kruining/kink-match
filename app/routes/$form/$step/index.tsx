@@ -1,8 +1,8 @@
 import { useLoaderData } from '@remix-run/react';
 import { json, LoaderFunction } from '@remix-run/cloudflare';
 import { styled } from '~/stiches.config.js';
-
-import Post from './test.mdx';
+import ReactMarkdown from 'react-markdown'
+import url from 'url';
 
 interface Question
 {
@@ -17,17 +17,40 @@ interface IndexData
 }
 
 export const loader: LoaderFunction = async () => {
+    console.log(url);
+
     return json<IndexData>({
         questions: [
-            { id: 'question1', label: 'Question 1', description: 'Description 1' },
-            { id: 'question2', label: 'Question 1', description: 'Description 2' },
-            { id: 'question3', label: 'Question 1', description: 'Description 3' },
+            { id: 'question1', label: 'Question 1', description: `
+                # Title
+                
+                A paragraph with *emphasis* and **strong importance**.
+                
+                > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+                
+                * Lists
+                * [ ] todo
+                * [x] done
+                
+                A table:
+                
+                | a | b |
+                | - | - |
+            ` },
+            { id: 'question2', label: 'Question 2', description: `
+                # Cool description
+            ` },
+            { id: 'question3', label: 'Question 3', description: `
+                # Cool description
+            ` },
         ],
     });
 };
 
 export default function Index()
 {
+    console.log(url);
+
     const { questions } = useLoaderData<IndexData>();
 
     return <>
@@ -44,11 +67,11 @@ export default function Index()
             </RangeRoot>
         </Row>
 
-        {questions.map(question => <Row>
+        {questions.map((question, i) => <Row key={i}>
             <header>
                 <label style={{ fontWeight: 'bold', fontSize: '1.2em' }}>{question.label}</label>
 
-                <Post />
+                <ReactMarkdown children={question.description} />
             </header>
 
             <Inputs id="" />
