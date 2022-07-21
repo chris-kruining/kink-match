@@ -82,7 +82,7 @@ export default function Index()
                 </details>
             </header>
 
-            {actors.map((actor, i) => <Inputs key={i} id={actor.id} />)}
+            {actors.map((actor, i) => <Inputs key={i} id={`${actor.id}.${question.id}`} />)}
 
         </Row>)}
     </>;
