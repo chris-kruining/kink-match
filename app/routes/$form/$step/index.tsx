@@ -1,7 +1,7 @@
 import { useLoaderData } from '@remix-run/react';
 import { json, LoaderFunction } from '@remix-run/cloudflare';
 import { styled } from '../../../stiches.config.js';
-import ReactMarkdown from 'react-markdown'
+// import ReactMarkdown from 'react-markdown'
 
 interface Actor
 {
@@ -78,7 +78,7 @@ export default function Index()
                 <details>
                     <QuestionLabel>{question.label}</QuestionLabel>
 
-                    <ReactMarkdown children={question.description} />
+                    <p children={question.description} />
                 </details>
             </header>
 
