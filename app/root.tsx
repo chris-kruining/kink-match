@@ -1,7 +1,7 @@
 import type { LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
 import { getColorScheme } from './cookies.js';
-import { darkTheme, globalStyles } from '~/stiches.config.js';
+import { darkTheme, globalStyles } from './stiches.config.js';
 import { json } from '@remix-run/cloudflare';
 import { match } from 'ts-pattern';
 

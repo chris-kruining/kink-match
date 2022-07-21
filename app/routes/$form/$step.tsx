@@ -1,9 +1,16 @@
 import { Outlet } from "@remix-run/react";
+import { styled } from '../../stiches.config.js';
 
 
 export default function Step()
 {
-    return <div style={{ display: 'grid', gap: '1em', placeContent: 'start' }}>
+    return <Root>
         <Outlet />
-    </div>;
+    </Root>;
 }
+
+const Root = styled('div', {
+    display: 'grid',
+    gap: '$bigger',
+    placeContent: 'start',
+});
