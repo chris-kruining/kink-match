@@ -2,7 +2,6 @@ import { useLoaderData } from '@remix-run/react';
 import { json, LoaderFunction } from '@remix-run/cloudflare';
 import { styled } from '~/stiches.config.js';
 import ReactMarkdown from 'react-markdown'
-import url from 'url';
 
 interface Question
 {
@@ -17,8 +16,6 @@ interface IndexData
 }
 
 export const loader: LoaderFunction = async () => {
-    console.log(url);
-
     return json<IndexData>({
         questions: [
             { id: 'question1', label: 'Question 1', description: `
@@ -49,8 +46,6 @@ export const loader: LoaderFunction = async () => {
 
 export default function Index()
 {
-    console.log(url);
-
     const { questions } = useLoaderData<IndexData>();
 
     return <>
