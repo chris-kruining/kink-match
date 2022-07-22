@@ -127,7 +127,7 @@ const InputsRoot = styled('div', {
 
 const RangeRoot = styled('div', {
     display: 'grid',
-    gridTemplateColumns: '5em repeat(5, 2em)',
+    gridTemplateColumns: '5em repeat(6, 2em)',
 });
 
 const Header = styled('span', {
