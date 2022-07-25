@@ -67,7 +67,8 @@ export default function Index()
                     <Header>Curious</Header>
                     <Header>Neutral</Header>
                     <Header>Rather not</Header>
-                    <Header>No, skip</Header>
+                    <Header>Absolutely not</Header>
+                    <Header>Skip / n/a</Header>
                 </RangeRoot>
             )}
 
@@ -108,6 +109,7 @@ function Range({ id, label }: { id: string, label: string })
         <input type="radio" name={`${id}`} value="neutral" />
         <input type="radio" name={`${id}`} value="unlikely" />
         <input type="radio" name={`${id}`} value="no" />
+        <input type="radio" name={`${id}`} value="skip" />
     </RangeRoot>;
 }
 
@@ -127,7 +129,7 @@ const InputsRoot = styled('div', {
 
 const RangeRoot = styled('div', {
     display: 'grid',
-    gridTemplateColumns: '5em repeat(5, 2em)',
+    gridTemplateColumns: '5em repeat(6, 2em)',
 });
 
 const Note = styled('label', {
