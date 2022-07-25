@@ -134,7 +134,7 @@ const RangeRoot = styled('div', {
 
 const Note = styled('label', {
     display: 'grid',
-    gridTemplateColumns: '5em 10em',
+    gridTemplateColumns: '5em 12em',
     placeItems: 'start',
 });
 
