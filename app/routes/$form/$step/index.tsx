@@ -93,6 +93,8 @@ function Inputs({ id }: { id: string })
     return <InputsRoot>
         <Range id={`${id}.receiving`} label="Receiving" />
         <Range id={`${id}.giving`} label="Giving" />
+
+        <Note>notes <NoteTextArea name={`${id}.note`} /></Note>
     </InputsRoot>;
 }
 
@@ -126,6 +128,17 @@ const InputsRoot = styled('div', {
 const RangeRoot = styled('div', {
     display: 'grid',
     gridTemplateColumns: '5em repeat(5, 2em)',
+});
+
+const Note = styled('label', {
+    display: 'grid',
+    gridTemplateColumns: '5em 10em',
+    placeItems: 'start',
+});
+
+const NoteTextArea = styled('textarea', {
+    minInlineSize: '100%',
+    maxInlineSize: '100%',
 });
 
 const Header = styled('span', {
