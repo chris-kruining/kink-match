@@ -20,7 +20,7 @@
     "ts-pattern": "4.0.5"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "3.17.0",
+    "@cloudflare/workers-types": "3.18.0",
     "@remix-run/dev": "1.7.3",
     "@remix-run/eslint-config": "1.7.3",
     "@types/react": "18.0.21",
